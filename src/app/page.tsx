@@ -65,6 +65,26 @@ export default function ScheduleAssistant() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-8">
       <div className="max-w-2xl mx-auto">
+        {/* PWA 安装提示 */}
+        <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl shadow-xl p-6 mb-6 text-white">
+          <div className="flex items-start gap-4">
+            <div className="text-4xl">📲</div>
+            <div className="flex-1">
+              <h2 className="text-xl font-bold mb-2">安装到桌面</h2>
+              <p className="text-blue-100 mb-3">将此应用安装为桌面应用，获得更好的体验！</p>
+              <div className="space-y-2 text-sm">
+                <div className="flex items-center gap-2">
+                  <span className="bg-white/20 px-2 py-1 rounded">Chrome/Edge</span>
+                  <span>点击地址栏右侧的安装图标</span>
+                </div>
+                <div className="text-blue-100">
+                  安装后可在桌面直接打开，像原生应用一样使用
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* 标题 */}
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-gray-800 mb-2">📅 桌面日程助手</h1>
@@ -203,24 +223,38 @@ export default function ScheduleAssistant() {
           </div>
         </div>
 
-        {/* 开机自启动说明 */}
+        {/* 使用说明 */}
         <div className="bg-white rounded-2xl shadow-xl p-6">
-          <h2 className="text-xl font-bold text-gray-800 mb-4">🚀 设置开机自启动</h2>
-          <div className="space-y-3 text-gray-700">
-            <p>要将本应用设置为开机自启动，请按以下步骤操作：</p>
-            <ol className="list-decimal list-inside space-y-2 ml-4">
-              <li>按 <kbd className="px-2 py-1 bg-gray-200 rounded">Win + R</kbd> 打开运行对话框</li>
-              <li>输入 <code className="px-2 py-1 bg-gray-200 rounded">shell:startup</code> 并回车</li>
-              <li>在打开的文件夹中创建快捷方式</li>
-              <li>快捷方式目标设置为：<code className="px-2 py-1 bg-gray-200 rounded text-sm">http://localhost:5000</code></li>
-              <li>确保开发服务器正在运行（端口 5000）</li>
-            </ol>
-            <div className="mt-4 p-4 bg-blue-50 rounded-lg">
-              <p className="font-medium text-blue-800 mb-2">💡 提示</p>
+          <h2 className="text-xl font-bold text-gray-800 mb-4">💡 使用说明</h2>
+          <div className="space-y-4 text-gray-700">
+            <div>
+              <h3 className="font-medium text-gray-900 mb-2">📱 安装到桌面（推荐）</h3>
+              <ol className="list-decimal list-inside space-y-1 ml-4 text-sm">
+                <li>使用 Chrome 或 Edge 浏览器访问此页面</li>
+                <li>点击地址栏右侧的 <strong>安装图标</strong>（或菜单中的"安装应用"）</li>
+                <li>确认安装，应用将添加到桌面和开始菜单</li>
+                <li>双击桌面图标即可启动，无需打开浏览器</li>
+              </ol>
+            </div>
+
+            <div>
+              <h3 className="font-medium text-gray-900 mb-2">🚀 设置开机自启动</h3>
+              <p className="text-sm text-gray-600 mb-2">先安装 PWA，然后：</p>
+              <ol className="list-decimal list-inside space-y-1 ml-4 text-sm">
+                <li>找到桌面上的"日程助手"快捷方式</li>
+                <li>按 <kbd className="px-2 py-1 bg-gray-200 rounded text-xs">Win + R</kbd>，输入 <code className="px-2 py-1 bg-gray-200 rounded text-xs">shell:startup</code></li>
+                <li>将桌面快捷方式复制到打开的文件夹</li>
+                <li>重启电脑，应用将自动启动</li>
+              </ol>
+            </div>
+
+            <div className="p-4 bg-blue-50 rounded-lg">
+              <p className="font-medium text-blue-800 mb-2 text-sm">✨ 优势</p>
               <ul className="text-sm text-blue-700 space-y-1">
-                <li>• 数据保存在浏览器本地，不会丢失</li>
-                <li>• 可以使用浏览器的 PWA 功能安装到桌面</li>
-                <li>• 推荐使用 Chrome 或 Edge 浏览器</li>
+                <li>• 数据保存在本地，不会丢失</li>
+                <li>• 独立窗口，不受浏览器标签页影响</li>
+                <li>• 更好的性能和响应速度</li>
+                <li>• 可以在开始菜单和任务栏固定</li>
               </ul>
             </div>
           </div>
